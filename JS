@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>POS System</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
 <body>
 
-<h2>What Can JavaScript Do?</h2>
+<div class="container">
+    <div class="row" id="pos">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Point of Sale</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <transaction items="{{ lineItems }}" edit="{{ toggleEdit }}" remove="{{ removeItem }}"></transaction>
+                </div>
+                <div class="col-md-6">
+                    <item-list items="{{ items }}" add="{{ onItemClick }}"></item-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>JavaScript can change HTML attribute values.</p>
 
-<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
-
-<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
-
-<img id="myImage" src="pic_bulboff.gif" style="width:100px">
-
-<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
-
+<script src="/js/bundle.js"></script>
 </body>
 </html>
